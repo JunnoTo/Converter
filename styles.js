@@ -7,7 +7,7 @@ export default StyleSheet.create({
     rect: {
       width: 403,
       height: 119,
-      backgroundColor: "rgba(100,186,105,1)",
+      backgroundColor: "#4caf50",
       marginLeft: -5
     },
     converter: {
@@ -19,32 +19,25 @@ export default StyleSheet.create({
       marginLeft: 126
     },
     icon: {
-      color: "rgba(49,137,61,1)",
+      color: "#087f23",
       fontSize: 50,
-      marginLeft: 18
-    },
-    icon2: {
-      color: "rgba(49,137,61,1)",
-      fontSize: 50,
-      marginLeft: 18
-    },
-    icon3: {
-      color: "rgba(49,137,61,1)",
-      fontSize: 50,
-      marginLeft: 18
+      marginLeft: 10
     },
     input:{
         flex:1,
         paddingHorizontal:12,
-        marginLeft:40,
+        marginLeft:5,
         fontSize:20,
         borderWidth:0.5,
+        marginRight:10,
     },
     inputView: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         borderWidth: 1,
+        marginRight:1,
+        marginLeft: 1,
     },
     helpText: {
         marginTop:20,
@@ -53,6 +46,19 @@ export default StyleSheet.create({
     },
     separator: {
         marginTop:80,
+    },
+    button: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical:10,
+      paddingHorizontal:40,
+      borderRadius:4,
+      elevation:3,
+      backgroundColor: '#80e27e',
+      marginRight:5
+    },
+    btnText: {
+      fontSize:15,
     }
   });
   
