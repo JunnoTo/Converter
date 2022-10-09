@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-      flex: 1
+      flex: 1,
+      alignItems:'center'
     },
     rect: {
       width: 403,
@@ -16,50 +17,59 @@ export default StyleSheet.create({
       color: "rgba(0,0,0,1)",
       fontSize: 30,
       marginTop: 67,
-      marginLeft: 126
+      marginLeft: 140
     },
-    icon: {
-      color: "#087f23",
-      fontSize: 50,
-      marginLeft: 10
+    picker:{
+      width:100,
+      marginLeft:50,
     },
-    input:{
-        flex:1,
-        paddingHorizontal:12,
-        marginLeft:5,
-        fontSize:20,
-        borderWidth:0.5,
-        marginRight:10,
+    text: {
+      fontSize:20,
+      marginLeft:20,
     },
-    inputView: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        borderWidth: 1,
-        marginRight:1,
-        marginLeft: 1,
-    },
-    helpText: {
-        marginTop:20,
-        marginLeft:14,
-        fontSize:16,
-    },
-    separator: {
-        marginTop:80,
-    },
-    button: {
+    pickContainer: {
+      width: 200,
+      flexDirection:'row',
+      marginTop:50,
+      marginHorizontal:90,
       alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical:10,
-      paddingHorizontal:40,
-      borderRadius:4,
-      elevation:3,
-      backgroundColor: '#80e27e',
-      marginRight:5
+      borderWidth:2,
+    },
+    inputField:{
+      flexDirection:'column',
+      alignItems: 'flex-start',
+      marginTop:40,
+    },
+    input:{
+      fontSize:40,
+      borderWidth:0.5,
+      marginTop:5,
+      marginLeft:20,
+    },
+    result: {
+      marginTop:5,
+      fontSize:40,
+      marginLeft:20,
+    },
+    button: {
+      marginTop:40,
+      marginBottom:40,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#087f23',
     },
     btnText: {
-      fontSize:15,
-    }
+      fontSize: 16,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      letterSpacing: 0.25,
+      color: 'white',
+    },
   });
   
   
