@@ -51,6 +51,7 @@ export default StyleSheet.create({
       marginTop:5,
       fontSize:40,
       marginLeft:20,
+      textDecorationLine:'underline',
     },
     button: {
       marginTop:40,

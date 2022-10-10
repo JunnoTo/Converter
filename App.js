@@ -1,27 +1,49 @@
 import {View, Text, TextInput, Pressable} from "react-native";
-import styles from './styles';
-import {Picker} from'@react-native-picker/picker';
-import React,{useState} from 'react';
+import styles from "./styles";
+import {Picker} from"@react-native-picker/picker";
+import React,{useEffect, useState} from "react";
 
 export default function App() {
 
+  const [array, setArray] = useState()
+  const [select1, setSelect1] = useState('EUR');
+  const [select2, setSelect2] = useState('USD');
+  const [amount, setAmount] = useState('');
+  const [outcome, setOutcome] = useState('0.00');
   const currencies =[
-    "USD",
-    "EUR",
-    "GBP",
-    "JPY",
-    "AUD",
-    "CAD",
-    "CHF",
-    "CNY",
-    "HKD",
-    "NZD",
-    "SEK",
+    'USD',
+    'EUR',
+    'GBP',
+    'JPY',
+    'AUD',
+    'CAD',
+    'CHF',
+    'CNY',
+    'HKD',
+    'NZD',
+    'SEK',
   ];
 
-  const [select1, setSelect1] = useState();
-  const [select2, setSelect2] = useState();
-  const [result, setResult] = useState(0.00);
+  useEffect(() =>{
+  const getData = async() =>{
+    const result = await fetch(`https://api.exchangerate-api.com/v4/latest/EUR`)
+    .then(response => response.json())
+    .catch(error => console.error('error', error))
+    .then(result => setArray(result.rates))
+  }
+  getData()
+  console.log(array)
+},[])
+
+const calculate = () =>{
+  let option1 = array[select1]
+  console.log(option1)
+  let option2 = array[select2]
+  console.log(option2)
+  
+  let math = amount * option1 * option2
+  setOutcome(math)
+}
 
   const handleValueChange=(itemValue, itemIndex) => {setSelect1(itemValue)}
   const handleValueChange2=(itemValue2, itemIndex) => {setSelect2(itemValue2)}
@@ -57,12 +79,12 @@ export default function App() {
       
       <View style={styles.inputField}>
         <Text style={styles.text}>Enter amount:</Text>
-        <TextInput style={styles.input} placeholder='0.00'/>
-        <Pressable style={styles.button}>
+        <TextInput style={styles.input} value={amount} onChangeText={text =>setAmount(text)} keyboardType='number-pad' placeholder='0.00'/>
+        <Pressable style={styles.button} onPress={() => calculate()}>
           <Text style={styles.btnText}>Calculate</Text>
         </Pressable>
         <Text style={styles.text}>Result:</Text>
-        <Text style={styles.result}>{result.toFixed(2)}</Text>
+        <Text style={styles.result}>{outcome}</Text>
     </View>
     </View>
   );
