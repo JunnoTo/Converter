@@ -9,7 +9,7 @@ export default function App() {
   const [select1, setSelect1] = useState('EUR');
   const [select2, setSelect2] = useState('USD');
   const [amount, setAmount] = useState('');
-  const [outcome, setOutcome] = useState('0.00');
+  const [outcome, setOutcome] = useState(0.00);
   const currencies =[
     'USD',
     'EUR',
@@ -84,7 +84,7 @@ const calculate = () =>{
           <Text style={styles.btnText}>Calculate</Text>
         </Pressable>
         <Text style={styles.text}>Result:</Text>
-        <Text style={styles.result}>{outcome}</Text>
+        <Text style={styles.result}>{outcome.toFixed(2)}</Text>
     </View>
     </View>
   );
