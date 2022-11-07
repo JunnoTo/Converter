@@ -30,7 +30,7 @@ export default StyleSheet.create({
     pickContainer: {
       width: 200,
       flexDirection:'row',
-      marginTop:50,
+      marginTop:30,
       marginHorizontal:90,
       alignItems: 'center',
       justifyContent: 'center',
@@ -39,23 +39,23 @@ export default StyleSheet.create({
     inputField:{
       flexDirection:'column',
       alignItems: 'flex-start',
-      marginTop:40,
+      marginTop:30,
     },
     input:{
       fontSize:40,
       borderWidth:0.5,
-      marginTop:5,
+      marginTop:2,
       marginLeft:20,
     },
     result: {
-      marginTop:5,
+      marginTop:2,
       fontSize:40,
       marginLeft:20,
       textDecorationLine:'underline',
     },
     button: {
-      marginTop:40,
-      marginBottom:40,
+      marginTop:30,
+      marginBottom:30,
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 12,
